@@ -1,0 +1,90 @@
+#header,
+#flash
+{
+    background-color: lightgray;
+}
+#header,
+#flash,
+#featured-1,
+#featured-2,
+#featured-3,
+#main,
+#sidebar,
+#triptych-1,
+#triptych-2,
+#triptych-3,
+#footer-col-1,
+#footer-col-2,
+#footer-col-3,
+#footer-col-4 {
+    background-color: white;
+}
+.sitetitle,
+.siteslogan{
+  padding: 10px;
+}
+
+@media only screen and (max-width: 1280px) {
+  #header,
+  #flash,
+  #featured-1,
+  #featured-2,
+  #featured-3,
+  #main,
+  #sidebar,
+  #triptych-1,
+  #triptych-2,
+  #triptych-3,
+  #footer-col-1,
+  #footer-col-2,
+  #footer-col-3,
+  #footer-col-4 {
+      width: 67.5%;
+      padding: 1%;
+      margin: 1%;
+  }
+  .sitelogo{
+    width: 10%;
+    height: 80%;
+  }
+}
+@media only screen and (max-width: 750px) {
+  #header,
+  #flash,
+  #featured-1,
+  #featured-2,
+  #featured-3,
+  #main,
+  #sidebar,
+  #triptych-1,
+  #triptych-2,
+  #triptych-3,
+  #footer-col-1,
+  #footer-col-2,
+  #footer-col-3,
+  #footer-col-4 {
+      width: 60%;
+      padding: 1%;
+      margin: 1%;
+  }
+}
+@media only screen and (max-width: 550px) {
+  #header,
+  #flash,
+  #featured-1,
+  #featured-2,
+  #featured-3,
+  #main,
+  #sidebar,
+  #triptych-1,
+  #triptych-2,
+  #triptych-3,
+  #footer-col-1,
+  #footer-col-2,
+  #footer-col-3,
+  #footer-col-4 {
+      width: 50%;
+      padding: 1%;
+      margin: 1%;
+  }
+}

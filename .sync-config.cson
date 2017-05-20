@@ -1,0 +1,16 @@
+remote:
+  host: "ssh.student.bth.se"
+  user: "fist14"
+  path: "/www/phpmvc1/kmom04"
+behaviour:
+  uploadOnSave: true
+  syncDownOnOpen: true
+  forgetConsole: false
+  autoHideConsole: true
+  alwaysSyncAll: false
+option:
+  deleteFiles: false
+  exclude: [
+    ".sync-config.cson"
+    ".htaccess"
+  ]
