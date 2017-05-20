@@ -26,13 +26,17 @@
 		?><a href="<?=$this->url->create('question/view/' . $tags[$key]->name)?>"><?=$tags[$key]->name?>(<?=$tags[$key]->cnt?>)</a> <?
 
 	}
-
-
-
 	?>
-
-
 </div>
 
+<div class="tags">
+	<h3>Populair users</h3>
+	<?php
+	foreach ($users as $key => $value) {
+		?><a href="<?=$this->url->create('user/profile/' . $users[$key]->acronym)?>"><?=$users[$key]->acronym?>(<?=$users[$key]->cnt?>)</a> <?
+
+	}
+	?>
+</div>
 
 

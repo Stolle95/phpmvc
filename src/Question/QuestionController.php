@@ -35,9 +35,11 @@ class QuestionController implements \Anax\DI\IInjectionAware
         $this->theme->setTitle("Home - Partoy");
         $all = $this->question->findAllQuestions();
         $tags = $this->question->getPopTags();
+        $users = $this->question->getPopUsers();
         $this->views->add('question/index', [
                 'questions' => $all[0],
                 'tags' => $tags,
+                'users' => $users,
         ]); 
     }
     /**

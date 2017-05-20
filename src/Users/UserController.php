@@ -44,45 +44,49 @@ class UserController implements \Anax\DI\IInjectionAware
 			    	$this->response->redirect($this->url->create('user/login'));
                     return true;
 		    	}
+		    	if (isset($this->session->get('authenticated', [])[1]))
+		    	{
 
-		    	if ($this->session->get('authenticated', [])[1] === $acronym or isset($this->session->get('authenticated', [])[1]) && $acronym === NULL)
-			    {
-			    	$form = $this->form->create([], [
-						'profileImg' => array(
-						    'type' => 'select',
-						    'label' => 'Change profile image:',
-						    'options' => array(
-						      'default' => 'Select a profile image...',
-						      'chef-icon' => 'chef-icon',
-						      'cop-icon' => 'cop-icon',
-						      'cowboy-icon' => 'cowboy-icon',
-						      'dice-faces' => 'dice-faces',
-						      'doctor-icon' => 'doctor-icon',
-						      'gentleman-icon' => 'gentleman-icon',
-						      'miss-crown-icon' => 'miss-crown-icon',
-						      'miss-grey-hat-icon' => 'miss-grey-hat-icon',
-						      'miss-purple-hat-icon' => 'miss-purple-hat-icon',
 
-						    ),
-						    'validation' => array('not_empty', 'not_equal' => 'default')
-						  ),
-                        'submit' => [
-                            'type'      => 'submit',
-                            'value'         => 'Change img',
-                            'callback'  => function () {
-                                $this->users->updateProfile([
-                                    'profileImg' => $this->form->Value('profileImg')
-                                    ], $this->session->get('authenticated', [])[1]
-                                );
-                                $this->response->redirect($this->url->create('user/profile/' . $this->session->get('authenticated', [])[1]));
-                                return true;
-                            }
-                        ],
-                       ]);
-                		$form->check();
-                		$prof = $form->getHTML();
-			    }
 
+			    	if ($this->session->get('authenticated', [])[1] === $acronym or isset($this->session->get('authenticated', [])[1]) && $acronym === NULL)
+				    {
+				    	$form = $this->form->create([], [
+							'profileImg' => array(
+							    'type' => 'select',
+							    'label' => 'Change profile image:',
+							    'options' => array(
+							      'default' => 'Select a profile image...',
+							      'chef-icon' => 'chef-icon',
+							      'cop-icon' => 'cop-icon',
+							      'cowboy-icon' => 'cowboy-icon',
+							      'dice-faces' => 'dice-faces',
+							      'doctor-icon' => 'doctor-icon',
+							      'gentleman-icon' => 'gentleman-icon',
+							      'miss-crown-icon' => 'miss-crown-icon',
+							      'miss-grey-hat-icon' => 'miss-grey-hat-icon',
+							      'miss-purple-hat-icon' => 'miss-purple-hat-icon',
+
+							    ),
+							    'validation' => array('not_empty', 'not_equal' => 'default')
+							  ),
+	                        'submit' => [
+	                            'type'      => 'submit',
+	                            'value'         => 'Change img',
+	                            'callback'  => function () {
+	                                $this->users->updateProfile([
+	                                    'profileImg' => $this->form->Value('profileImg')
+	                                    ], $this->session->get('authenticated', [])[1]
+	                                );
+	                                $this->response->redirect($this->url->create('user/profile/' . $this->session->get('authenticated', [])[1]));
+	                                return true;
+	                            }
+	                        ],
+	                       ]);
+	                		$form->check();
+	                		$prof = $form->getHTML();
+				    }
+				}
 		$this->views->add('users/profile', [
 		        'profile' => $profile[0],
 		        'questions' => $profile[1],

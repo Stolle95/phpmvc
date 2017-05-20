@@ -14,5 +14,8 @@ Install:
  - tagHandler
  - user
 
+Uses fUser to handle login and users.
+https://github.com/FilipBrannlundStal/fUser
+
 live demo: http://www.student.bth.se/~fist14/phpmvc1/kmom10/webroot/
 A project for phpmvc course. (Not serious content, coding &amp; usage)

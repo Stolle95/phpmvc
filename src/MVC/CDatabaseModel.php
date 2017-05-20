@@ -26,6 +26,14 @@ class CDatabaseModel implements \Anax\DI\IInjectionAware
         $this->db->execute();
         return $this->db->fetchAll();	
 	}
+	public function getPopUsers()
+	{
+		$this->db->select("user.acronym, COUNT(*) cnt")
+                 ->from("`commentHandler` INNER JOIN user ON user.id=commentHandler.userId GROUP BY user.acronym ORDER BY COUNT(*) DESC LIMIT 5");
+     
+        $this->db->execute();
+        return $this->db->fetchAll();	
+	}
 	public function getProfile($acronym)
 	{
 	    $this->db->select()
